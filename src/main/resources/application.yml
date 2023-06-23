@@ -1,0 +1,24 @@
+server:
+  port: 9090
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
+
+spring:
+  main:
+    allow-circular-references: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    deserialization:
+      read-date-timestamps-as-nanoseconds: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    hikari:
+      idleTimeout: 70000
+      maxLifetime: 300000
+      connectionTimeout: 3000

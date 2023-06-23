@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_HOST}/${DATASOURCE_DATABASE}
+    username: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    hikari:
+      idleTimeout: 70000
+      maxLifetime: 300000
+      connectionTimeout: 3000
